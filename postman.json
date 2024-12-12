@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "45c94263-acea-445a-9990-e3c31200a988",
+		"name": "Product API Test - BackEnd-Team3-Digistar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38018484"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/all_products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"all_products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products with Pagination - GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/products?limit=5&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products with Pagination - POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"limit\": 10,\n    \"page\": 1\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ID - GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/products/8365736d-599d-4489-a262-8dc270afeba6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"8365736d-599d-4489-a262-8dc270afeba6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ID - POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": \"8365736d-599d-4489-a262-8dc270afeba6\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products_id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Similar Products by Product ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/product_similarity/8365736d-599d-4489-a262-8dc270afeba6",
+					"protocol": "http",
+					"host": [
+						"134",
+						"209",
+						"105",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product_similarity",
+						"8365736d-599d-4489-a262-8dc270afeba6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get AI Best Product by ID - GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_ids\": [\n        \"9bf12451-5274-438a-8d3f-26772d4564a6\",\n        \"9555ced5-5d30-4e7c-b592-d4bbb1a3e049\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ai-best-products",
+					"protocol": "http",
+					"host": [
+						"134",
+						"209",
+						"105",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ai-best-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Search Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/search?product_name=T-Shirt",
+					"protocol": "http",
+					"host": [
+						"134",
+						"209",
+						"105",
+						"5"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "product_name",
+							"value": "T-Shirt"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
